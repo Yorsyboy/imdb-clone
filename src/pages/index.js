@@ -22,14 +22,14 @@ export default function Home({results}) {
       <Navbar />
 
       {/* Results */}
-      <Results />
+      <Results results={results} />
     </>
   )
 }
 
 
 export async function getServerSideProps(context) {
-  const genre = context.query.genre || "fetchTrending"
+  const genre = context.query.genre || "fetchTrending";
 
   const requests = await fetch(`https://api.themoviedb.org/3${request[genre]?.url}`)
     .then(res => res.json())

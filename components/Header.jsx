@@ -5,7 +5,7 @@ import {
   UserIcon,
   PhoneIcon,
   InformationCircleIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/solid";
 
 export default function Header() {
   return (

@@ -5,10 +5,8 @@ import React from "react";
 import Providers from "../Providers";
 
 export default function MoviesDetails({ movie }) {
-  console.log(movie);
   let genres = movie.genres.map((genre) => genre.name);
-  let result = '[\n  ' + genres.join(',\n  ') + '\n]';
-  console.log(result);
+  let result = '\n  ' + genres.join(',\n  ') + '\n';
   return (
     <Providers>
       {/* Header */}

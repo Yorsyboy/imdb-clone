@@ -6,7 +6,6 @@ import request from 'utils/request'
 import Providers from './Providers'
 
 export default function Home({ results }) {
-  console.log(results)
   return (
     <>
       <Head>

@@ -3,9 +3,9 @@ import Navbar from 'components/Navbar'
 import Results from 'components/Results'
 import Head from 'next/head'
 import request from 'utils/request'
+import Providers from './Providers'
 
-export default function Home({results}) {
-  console.log(results)
+export default function Home({ results }) {
   return (
     <>
       <Head>
@@ -15,14 +15,16 @@ export default function Home({results}) {
         <link rel="icon" href="https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png" />
       </Head>
 
-      {/* Header */}
-      <Header />
+      <Providers>
+        {/* Header */}
+        <Header />
 
-      {/* Navbar */}
-      <Navbar />
+        {/* Navbar */}
+        <Navbar />
 
-      {/* Results */}
-      <Results results={results} />
+        {/* Results */}
+        <Results results={results} />
+      </Providers>
     </>
   )
 }

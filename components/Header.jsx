@@ -1,29 +1,32 @@
 import Image from "next/image";
 import HeaderIcon from "./HeaderIcon";
-import {
-  HomeIcon,
-  UserIcon,
-  PhoneIcon,
-  InformationCircleIcon,
-} from "@heroicons/react/solid";
+import { HomeIcon, InformationCircleIcon } from "@heroicons/react/solid";
+import Link from "next/link";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 export default function Header() {
   return (
-    <div className="bg-gray-700 text-gray-200 flex flex-col items-center p-6 select-none sm:flex-row justify-between">
+    <div className="flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
       <div className="flex">
-        <HeaderIcon Icon={HomeIcon} title="HOME" />
-        <HeaderIcon Icon={UserIcon} title="ACCOUNT" />
-        <HeaderIcon Icon={PhoneIcon} title="CONTACT" />
-        <HeaderIcon Icon={InformationCircleIcon} title="ABOUT" />
+        <HeaderIcon Icon={HomeIcon} address="/" title="HOME" />
+        <HeaderIcon
+          Icon={InformationCircleIcon}
+          address="/about"
+          title="ABOUT"
+        />
       </div>
 
-      <Image
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png"
-        alt="Logo"
-        width={100}
-        height={100}
-        className="cursor-pointer active:brightness-110"
-      />
+      <div className="flex items-center space-x-5">
+        <DarkModeSwitch />
+        <Link href="/">
+          <h2 className="text-2xl">
+            <span className="font-bold bg-amber-500 py-1 px-2 rounded-lg mr-1">
+              IMDb
+            </span>
+            <span className="text-xl hidden sm:inline">Clone</span>
+          </h2>
+        </Link>
+      </div>
     </div>
   );
 }

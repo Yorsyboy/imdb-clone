@@ -18,7 +18,7 @@ export default function Card({ result }) {
             height: "auto",
           }}
           placeholder="blur"
-          blurDataURL={`https://image.tmdb.org/t/p/original/${result.poster_path}`}
+          blurDataURL="/spinner.svg"
           alt="image is not available"
         ></Image>
         <div className="p-2">
